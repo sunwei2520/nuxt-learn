@@ -1,0 +1,82 @@
+/* ============================================================
+   CSS 设计变量（design tokens）
+   配合 ThemeSwitcher demo 演示暗色/浅色主题切换
+   ============================================================ */
+
+:root {
+  /* ---- 主题色 ---- */
+  --primary: #00dc82;
+  --primary-dark: #00c474;
+  --primary-light: #a7f3d0;
+
+  /* ---- 文字 ---- */
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  /* ---- 背景 ---- */
+  --bg: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-hover: #f1f5f9;
+
+  /* ---- 边框 ---- */
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
+
+  /* ---- 阴影 ---- */
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* ---- 圆角 ---- */
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+/* ---- 暗色主题 ---- */
+[data-theme='dark'] {
+  --primary: #34d399;
+  --primary-dark: #10b981;
+  --primary-light: #065f46;
+
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --bg: #0f172a;
+  --bg-card: #1e293b;
+  --bg-hover: #334155;
+
+  --border: #334155;
+  --border-hover: #475569;
+
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- 主题切换过渡 ---- */
+html,
+body,
+* {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* ---- 布局 ---- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---- 通用组件样式（被 .dark 覆盖时也能工作） ---- */
+.demo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.demo-text {
+  color: var(--text-secondary);
+}

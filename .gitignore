@@ -1,0 +1,19 @@
+# Nuxt
+.nuxt
+.nuxt-test
+.nuxtrc
+.output
+.data
+dist
+
+# Node
+node_modules
+*.log*
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Misc
+.DS_Store
